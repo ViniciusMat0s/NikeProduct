@@ -36,9 +36,11 @@ function nextSlide() {
 
 updateCarousel();
 
-const menuToggle = document.getElementById('menu-toggle');
-const links = document.querySelector('.links');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const links = document.querySelector('.links');
 
-menuToggle.addEventListener('click', () => {
-  links.classList.toggle('show');
+  menuToggle.addEventListener('click', () => {
+    links.classList.toggle('show');
+  });
 });
