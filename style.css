@@ -1,58 +1,65 @@
+/* ==========================================================================
+   ESTILOS GLOBAIS E RESET
+   ========================================================================== */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
     overflow-x: hidden;
-    /* evita scroll horizontal e bordas brancas laterais */
-    height: 100%;
 }
 
 body {
-    font-family: 'Oswald';
+    font-family: 'Oswald', sans-serif;
 }
 
 li,
 a,
 button {
-    color: black;
     text-decoration: none;
+    color: black;
 }
 
+/* ==========================================================================
+   CABEÇALHO (HEADER)
+   ========================================================================== */
+
 header {
+    position: relative;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     padding: 30px 10%;
     background-color: #f4f4f4;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    z-index: 999;
 
     .icons {
         display: flex;
         gap: 1rem;
-        height: 1.5rem;
         width: 1.5rem;
+        height: 1.5rem;
         cursor: pointer;
     }
 }
 
 #logo {
-    cursor: pointer
+    cursor: pointer;
 }
 
 .links {
-    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style: none;
     color: black;
     transition: all 0.3s ease;
 
@@ -70,12 +77,12 @@ header {
     }
 
     input {
-        background-color: white;
-        border-radius: 1rem;
-        height: 2rem;
         width: 12rem;
+        height: 2rem;
         margin-left: 8rem;
         padding-left: 0.8rem;
+        background-color: white;
+        border-radius: 1rem;
     }
 
     input:hover {
@@ -86,34 +93,60 @@ header {
 
 header button {
     padding: 9px 25px;
+    color: black;
     background-color: rgba(255 255 255 / 1);
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: black;
 }
 
 header button:hover {
     background-color: #0088a9cc;
 }
 
+.menu-toggle {
+    position: absolute;
+    /* Ajustado para estar no fluxo correto com a media query */
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    z-index: 1000;
+    display: none;
+    /* Inicialmente oculto, visível via media query */
+    opacity: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* ==========================================================================
+   SEÇÃO DO PRODUTO
+   ========================================================================== */
+
 .product-container {
+    position: relative;
     width: 100%;
     min-height: 100vh;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     background-color: #f4f4f4;
-    position: relative;
     overflow: hidden;
 }
 
 .product {
-    width: 65%;
-    height: 100%;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    width: 65%;
+    height: 100%;
     padding-bottom: 10rem;
     background: #0088a9;
     background: linear-gradient(90deg, #0088a9 0%, #f4f4f4 50%);
@@ -122,79 +155,80 @@ header button:hover {
 
     .main-product {
         position: absolute;
-        width: 80%;
-        transform: rotate(-15deg);
         z-index: 1;
+        width: 80%;
         margin-right: 4rem;
+        transform: rotate(-15deg);
     }
 
     h1 {
-        font-family: "Oswald";
-        font-weight: 500;
         position: absolute;
-        color: black;
-        text-align: center;
+        font-family: "Oswald", sans-serif;
         font-size: 25rem;
+        font-weight: 500;
         line-height: 80%;
+        text-align: center;
         color: #ffffff;
         text-shadow: 1px 4px 3px rgba(0, 0, 0, 0.05);
     }
-
 }
 
 .bg {
-    width: 70%;
-    height: auto;
     position: absolute;
     z-index: -1;
+    width: 70%;
+    height: auto;
     filter: brightness(30%);
 }
+
+/* ==========================================================================
+   INFORMAÇÕES DO PRODUTO (PAINEL DIREITO)
+   ========================================================================== */
 
 .product-info {
     display: flex;
     justify-content: end;
     align-items: end;
-    height: 100%;
     width: auto;
+    height: 100%;
 }
 
 .text {
-    width: 35%;
-    height: 100vh;
+    z-index: 9;
     display: flex;
     flex-direction: column;
-    padding-right: 5rem;
-    padding-left: 5rem;
+    width: 35%;
+    height: 100vh;
+    padding: 0 5rem;
     box-shadow: 0px 8px 20px #0000000d;
-    z-index: 9;
 
     h2 {
         padding-top: 2rem;
     }
 
     h3 {
-        text-align: center;
         padding-top: 1rem;
         font-weight: 600;
+        text-align: center;
     }
 }
 
 .button-wrapper {
-    width: 100%;
     display: flex;
-    margin-top: 1rem;
     justify-content: center;
-    margin-left: 1rem
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 
 .buy-button {
-    margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: #000;
+    margin-top: 1.5rem;
+    font-size: 1rem;
     color: #fff;
+    background-color: #000;
     border: none;
     border-radius: 0.5rem;
-    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -207,57 +241,62 @@ header button:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
-    margin-top: 1.5rem;
-    width: 100%;
     justify-items: center;
+    width: 100%;
+    margin-top: 1.5rem;
 }
 
 .sizes {
     width: 5rem;
     height: 2.5rem;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    border-radius: 0.4rem;
-    cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s ease;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
     box-shadow: 0px 8px 20px #0000000d;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .sizes:hover {
-    background-color: #000;
     color: #fff;
+    background-color: #000;
     border-color: #000;
 }
 
+/* ==========================================================================
+   CARROSSEL DE FOTOS DO PRODUTO
+   ========================================================================== */
+
 .carousel-wrapper {
     position: absolute;
-    width: 80%;
-    max-width: 1000px;
-    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    width: 80%;
+    max-width: 1000px;
+    height: 350px;
     margin-top: 30%;
+    overflow: hidden;
 }
 
 .carousel {
-    display: flex;
-    transition: transform 0.5s ease;
-    align-items: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
 }
 
 .carousel img {
     display: none;
-    transition: all 0.4s ease;
     flex-shrink: 0;
     border-radius: 10px;
     box-shadow: -2px 0px 12px 1px rgba(204, 204, 204, 0.75);
     -webkit-box-shadow: -2px 0px 12px 1px rgba(204, 204, 204, 0.75);
     -moz-box-shadow: -2px 0px 12px 1px rgba(204, 204, 204, 0.75);
+    transition: all 0.4s ease;
 }
 
 .carousel img.visible {
@@ -265,38 +304,38 @@ header button:hover {
 }
 
 .carousel img.main {
+    z-index: 2;
     height: 10rem;
     opacity: 1;
+    background-color: rgba(255 255 255 / 0.3);
     filter: none;
     transform: scale(1.1);
-    z-index: 2;
-    background-color: rgba(255 255 255 / 0.3);
 }
 
 .carousel img:not(.main).visible {
     height: 7rem;
     opacity: 0.4;
-    filter: blur(2px);
     background-color: rgba(255 255 255 / 0.3);
+    filter: blur(2px);
 }
 
 .nav {
-    background: transparent;
-    border: none;
-    color: #aaa;
-    font-size: 2rem;
-    padding: 1rem;
-    cursor: pointer;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     z-index: 3;
-    width: 2.5rem;
-    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 1rem;
+    font-size: 2rem;
+    color: #aaa;
+    background: transparent;
+    border: none;
     border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
     transition: color 0.3s ease;
 }
 
@@ -304,43 +343,28 @@ header button:hover {
     color: white;
 }
 
-.left {
-    padding-left: 25%;
+.nav.left {
     left: 0;
+    padding-left: 25%;
 }
 
-.right {
+.nav.right {
     right: 0;
     padding-right: 25%;
 }
 
-.menu-toggle {
-    display: flex;
-    opacity: 0;
-    top: 50%;
-    right: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    padding: 0;
-}
+/* ==========================================================================
+    MEDIA QUERY
+   ========================================================================== */
 
-.menu-toggle img {
-    width: 2rem;
-    height: 2rem;
-    display: block;
-}
-
-/* Dispositivos pequenos (celulares) */
-@media (min-width: 0px) and (max-width: 768px) {
-
+/* Dispositivos pequenos (celulares: até 768px) */
+@media (max-width: 768px) {
     .menu-toggle {
         display: flex;
-        width: 2rem;
-        height: 2rem;
         align-items: center;
         justify-content: center;
+        width: 2rem;
+        height: 2rem;
         margin-left: 70%;
         opacity: 1;
     }
@@ -353,25 +377,30 @@ header button:hover {
         background-color: transparent;
     }
 
+    .icons {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+
     .links {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: #f4f4f4;
-        gap: 1rem;
-        padding: 1rem 2rem;
+        z-index: 999;
         display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        background-color: #f4f4f4;
+        box-shadow: 0px 8px 20px #00000010;
         opacity: 0;
         transition: opacity 0.3s ease;
-        box-shadow: 0px 8px 20px #00000010;
-        z-index: 999;
     }
 
     .links.show {
         display: flex;
-        flex-direction: column;
         opacity: 1;
         pointer-events: auto;
     }
@@ -387,41 +416,40 @@ header button:hover {
         margin: 1rem 0 0 0;
     }
 
-    .icons {
-        opacity: 0;
-        width: 0%;
-        height: 0%;
-    }
-
     .product {
+        position: static;
         flex-direction: column;
         width: 100%;
         padding: 2rem 1rem;
-        position: static;
         background: linear-gradient(180deg, #0088a9 0%, #f4f4f4 100%);
     }
 
-    .main-product {
-        width: 100%;
+    .product h1 {
         position: static;
+        margin-top: 2rem;
+        font-size: 10rem;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    .main-product {
+        position: static;
+        width: 100%;
         margin: 0 auto;
         transform: none;
     }
 
-    .product h1 {
-        font-size: 10rem;
-        position: static;
-        line-height: 100%;
-        text-align: center;
-        margin-top: 2rem;
+    .product-info {
+        justify-content: center;
+        align-items: center;
     }
 
     .text {
         width: 100%;
         padding: 1rem;
-        box-shadow: none;
         font-size: 0.8rem;
         text-align: center;
+        box-shadow: none;
 
         h2 {
             margin-bottom: 1rem;
@@ -432,14 +460,17 @@ header button:hover {
         margin: 0;
     }
 
+    .sizes-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
     .carousel-wrapper {
+        position: static;
         flex-direction: column;
         width: 100%;
         height: auto;
         margin-top: 2rem;
-        position: static;
     }
-
 
     .carousel img.main {
         height: 7rem;
@@ -450,38 +481,29 @@ header button:hover {
     }
 
     .nav {
-        padding-bottom: 60vh;
-        font-size: 1.5rem;
         width: 2rem;
         height: 2rem;
+        padding-bottom: 60vh;
+        font-size: 1.5rem;
     }
 
-    .left {
+    .nav.left {
         left: 0.2rem;
     }
 
-    .right {
+    .nav.right {
         right: 0.2rem;
-    }
-
-    .sizes-wrapper {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .product-info {
-        justify-content: center;
-        align-items: center;
     }
 }
 
+/* Dispositivos médios (tablets: 769px a 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-
     .menu-toggle {
         display: flex;
-        width: 2rem;
-        height: 2rem;
         align-items: center;
         justify-content: center;
+        width: 2rem;
+        height: 2rem;
         margin-left: 85%;
         opacity: 1;
     }
@@ -494,25 +516,30 @@ header button:hover {
         background-color: transparent;
     }
 
+    .icons {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+
     .links {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: #f4f4f4;
-        gap: 1rem;
-        padding: 1rem 2rem;
+        z-index: 999;
         display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        background-color: #f4f4f4;
+        box-shadow: 0px 8px 20px #00000010;
         opacity: 0;
         transition: opacity 0.3s ease;
-        box-shadow: 0px 8px 20px #00000010;
-        z-index: 999;
     }
 
     .links.show {
         display: flex;
-        flex-direction: column;
         opacity: 1;
         pointer-events: auto;
     }
@@ -528,57 +555,60 @@ header button:hover {
         margin: 1rem 0 0 0;
     }
 
-    .icons {
-        opacity: 0;
-        width: 0%;
-        height: 0%;
-    }
-
     .product {
+        position: static;
         flex-direction: column;
         width: 100%;
         padding: 2rem 1rem;
-        position: static;
         background: linear-gradient(180deg, #0088a9 0%, #f4f4f4 100%);
     }
 
-    .main-product {
-        width: 100%;
+    .product h1 {
         position: static;
+        margin-top: 2rem;
+        font-size: 20rem;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    .main-product {
+        position: static;
+        width: 100%;
         margin: 0 auto;
         transform: none;
     }
 
-    .product h1 {
-        font-size: 20rem;
-        position: static;
-        line-height: 100%;
-        text-align: center;
-        margin-top: 2rem;
+    .product-info {
+        justify-content: center;
+        align-items: center;
     }
 
     .text {
         width: 100%;
         padding: 1rem;
-        box-shadow: none;
         font-size: 0.8rem;
         text-align: center;
-    }
+        box-shadow: none;
 
-    .text h2 {
-        margin-bottom: 1rem;
+        h2 {
+            margin-bottom: 1rem;
+        }
     }
 
     .button-wrapper {
         margin: 0;
     }
 
+    .sizes-wrapper {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
     .carousel-wrapper {
+        position: static;
         flex-direction: column;
         width: 100%;
         height: auto;
         margin-top: 2rem;
-        position: static;
     }
 
     .carousel img.main {
@@ -590,26 +620,17 @@ header button:hover {
     }
 
     .nav {
-        padding-bottom: 35vh;
-        font-size: 1.5rem;
         width: 2rem;
         height: 2rem;
+        padding-bottom: 35vh;
+        font-size: 1.5rem;
     }
 
-    .left {
+    .nav.left {
         left: 0.2rem;
     }
 
-    .right {
+    .nav.right {
         right: 0.2rem;
-    }
-
-    .sizes-wrapper {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .product-info {
-        justify-content: center;
-        align-items: center;
     }
 }
