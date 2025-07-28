@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação de produto</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <img src="assets/images/logo.svg" alt="logo" id="logo">
+
+        <nav>
+            <ul class="links">
+                <li><a href="">Ofertas</a></li>
+                <li><a href="">Lançamentos</a></li>
+                <li><a href="">Masculino</a></li>
+                <li><a href="">Feminino</a></li>
+                <li><a href="">Infantil</a></li>
+                <li><a href="">SNKRS</a></li>
+                <input type="search">
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <img src="assets/images/like.png" alt="Like">
+            <img src="assets/images/cart.png" alt="Cart">
+        </div>
+    </header>
+
+    <main>
+        <section class="product-container">
+            <div class="product">
+                <img src="assets/images/1.png" class="main-product">
+                <h1>KING</h1>
+            </div>
+
+            <div class="carousel-wrapper">
+                <button class="nav left" onclick="prevSlide()">&#10094;</button>
+
+                <div class="carousel">
+                    <!-- 10 imagens fixas -->
+                    <img src="assets/images/1.png" alt="" />
+                    <img src="assets/images/2.png" alt="" />
+                    <img src="assets/images/3.png" alt="" />
+                    <img src="assets/images/4.png" alt="" />
+                    <img src="assets/images/5.png" alt="" />
+                    <img src="assets/images/6.png" alt="" />
+                    <img src="assets/images/7.png" alt="" />
+                    <img src="assets/images/8.png" alt="" />
+                    <img src="assets/images/9.png" alt="" />
+                    <img src="assets/images/10.png" alt="" />
+                </div>
+
+                <button class="nav right" onclick="nextSlide()">&#10095;</button>
+            </div>
+
+            <div class="product-info">
+                <div class="text">
+                    <h2>Lebron XXI</h2>
+                    O LeBron XXI eleva a performance nas quadras com um design leve, rente ao solo e tecnologia Air
+                    Zoom, oferecendo agilidade e fluidez nos movimentos sem pesar. Ideal para ataques explosivos e
+                    jogadas rápidas, foi criado para acompanhar a ascensão de uma nova geração de arremessadores. Nesta
+                    edição especial, o visual mergulha nas profundezas do oceano, inspirado no cultivo de ostras, com
+                    uma sola que brilha no escuro, remetendo aos organismos vibrantes do fundo do mar. Um tênis feito
+                    para quem joga com intensidade e estilo, como o Rei.</p>
+
+                    <h3>Tamanhos disponíveis</h3>
+                    <div class="sizes-wrapper">
+                        <button class="sizes">34</button>
+                        <button class="sizes">35</button>
+                        <button class="sizes">36</button>
+                        <button class="sizes">37</button>
+                        <button class="sizes">38</button>
+                        <button class="sizes">39</button>
+                        <button class="sizes">40</button>
+                        <button class="sizes">41</button>
+                        <button class="sizes">42</button>
+                        <button class="sizes">43</button>
+                        <button class="sizes">44</button>
+                        <button class="sizes">45</button>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <button class="buy-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
