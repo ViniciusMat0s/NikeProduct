@@ -40,7 +40,5 @@ const menuToggle = document.getElementById('menu-toggle');
 const links = document.querySelector('.links');
 
 menuToggle.addEventListener('click', () => {
-  const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-  menuToggle.setAttribute('aria-expanded', !expanded);
-  links.classList.toggle('active');
+  links.classList.toggle('show');
 });
